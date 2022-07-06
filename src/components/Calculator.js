@@ -69,7 +69,7 @@ class Calculator extends React.Component {
 
     return (
       <div className="key-buttons-container">
-        <DisplayScreen key="displayScreen" name="displayScreen"/>
+        <DisplayScreen key="displayScreen" name="displayScreen" />
         {KeyButtons}
       </div>
     );

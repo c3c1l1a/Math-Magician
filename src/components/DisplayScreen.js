@@ -18,5 +18,8 @@ DisplayScreen.defaultProps = {
   displayScreen: 'displayScreen',
 };
 
+DisplayScreen.propTypes = {
+  displayScreen: PropTypes.string,
+};
 
 export default DisplayScreen;
