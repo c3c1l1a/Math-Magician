@@ -5,15 +5,24 @@ import PropTypes from 'prop-types';
 class NumberButton extends React.Component {
   render() {
     const { keyValue } = this.props;
-    const className = `item-${keyValue}`;
+    const [name, sign] = [...keyValue];
+
     return (
-      <button className={className} type="submit">
-        {keyValue}
+      <button className={name} type="submit">
+        {sign}
       </button>
     );
   }
 }
 
-NumberButton.propTypes = { keyValue: PropTypes.number.isRequired };
+NumberButton.defaultProps = {
+  keyValue: ['sign', 0],
+};
+
+NumberButton.propTypes = {
+  keyValue: PropTypes.arrayOf(PropTypes.oneOfType(
+    [PropTypes.string.isRequired, PropTypes.number.isRequired],
+  )),
+};
 
 export default NumberButton;

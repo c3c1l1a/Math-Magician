@@ -1,20 +1,28 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 class DisabledButton extends React.Component {
   render() {
     const { keyValue } = this.props;
-    const className = `item-${keyValue}`;
+    const [name, sign] = [...keyValue];
+
     return (
-      <button className={className} type="submit">
-        {keyValue}
+      <button className={name} type="submit">
+        {sign}
       </button>
     );
   }
 }
 
-DisabledButton.propTypes = { keyValue: PropTypes.string.isRequired };
+DisabledButton.defaultProps = {
+  keyValue: ['sign', '+'],
+};
+
+DisabledButton.propTypes = {
+  keyValue: PropTypes.arrayOf(PropTypes.oneOfType(
+    [PropTypes.string.isRequired, PropTypes.string.isRequired],
+  )),
+};
 
 export default DisabledButton;
