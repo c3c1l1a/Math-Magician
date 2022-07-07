@@ -38,7 +38,9 @@ class Calculator extends React.Component {
     } = this.state;
 
     if (operations.includes(key)) {
-      this.setState({ operation: key });
+      if ((operation !== null && operand2 === null) || operation === null) {
+        this.setState({ operation: key });
+      }
     } else if (numbers.includes(key)) {
       if (operation === null) {
         if (operand1 === null || result === operand1) this.setState({ operand1: key });
@@ -50,6 +52,19 @@ class Calculator extends React.Component {
       const hasOperand2 = operand2 !== null;
       const hasOperation = operation !== null;
       if (hasOperand1 && hasOperand2 && hasOperation) this.doOperation();
+    } else if (key === 'AC') {
+      if (operation === null && operand1 !== null) {
+        let newOperand1 = `${operand1}`.slice(0, -1);
+        newOperand1 = newOperand1.length > 0 ? newOperand1 : 0;
+        newOperand1 = parseInt(newOperand1, 10);
+        this.setState({ operand1: newOperand1 });
+      } else if (operation !== null && operand2 !== null) {
+        let newOperand2 = `${operand2}`.slice(0, -1);
+        newOperand2 = newOperand2.length > 0 ? newOperand2 : 0;
+        newOperand2 = parseInt(newOperand2, 10);
+        newOperand2 = newOperand2 !== 0 ? newOperand2 : null;
+        this.setState({ operand2: newOperand2 });
+      }
     }
   }
 
