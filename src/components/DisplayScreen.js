@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 
 class DisplayScreen extends React.Component {
   render() {
-    const { displayScreen } = this.props;
+    const { displayScreen, info } = this.props;
 
     return (
       <p className={displayScreen}>
-        0
+        <span>{info.operand1}</span>
+        <span>{info.operation}</span>
+        <span>{info.operand2}</span>
       </p>
     );
   }
@@ -16,10 +18,14 @@ class DisplayScreen extends React.Component {
 
 DisplayScreen.defaultProps = {
   displayScreen: 'displayScreen',
+  info: {},
 };
 
 DisplayScreen.propTypes = {
   displayScreen: PropTypes.string,
+  info: PropTypes.objectOf(PropTypes.oneOfType(
+    [PropTypes.number.isRequired, PropTypes.string.isRequired],
+  )),
 };
 
 export default DisplayScreen;
