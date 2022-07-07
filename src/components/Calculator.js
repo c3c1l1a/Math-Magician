@@ -11,20 +11,52 @@ import './css/calculator.css';
 class Calculator extends React.Component {
   constructor(props){
     super(props);
-    // Create a state for two numbers that are to be operated on
-    // Create a state for the operation result by calling the bound operation function 
+  
+    this.state = {
+      operand1: null,
+      operand2: null,
+      operation: null,
+      result: null
+    }
+  
     this.liftKey = this.liftKey.bind(this);
   }
 
-  doOperation(operation){
-    let result = operate(3, 2, operation);
-    console.log(result);
+  doOperation(){
+    let result = operate(this.state.operand1, this.state.operand2, this.state.operation);
+    this.setState({operand1: result});
+    this.setState({operand2: null});
+    this.setState({operation: null});
+    this.setState({result: result});
   }
   
   liftKey(key){
     const operations = ['+', '-', '%', 'x', '÷'];
-    if (operations.includes(key))
-      this.doOperation(key);
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const equals = '=';
+    if (operations.includes(key)){
+      this.setState({operation: key});
+    } else if(numbers.includes(key)){
+      if (this.state.operation === null){
+        if (this.state.operand1 === null || this.state.result === this.state.operand1)
+          this.setState({operand1: key})
+        else 
+            this.setState({operand1: parseInt(''+this.state.operand1+key)});
+      } else {
+        if (this.state.operand2 === null)
+          this.setState({operand2: key})
+        else 
+          this.setState({operand2: parseInt(''+this.state.operand2+key)});
+      } 
+        
+    } else if (key === '=') {
+      const hasOperand1 = this.state.operand1 !== null ? true : false;
+      const hasOperand2 = this.state.operand2 !== null ? true : false;
+      const hasOperation = this.state.operation !== null ? true : false;
+      if (hasOperand1 && hasOperand2 && hasOperation){
+        this.doOperation();
+      }
+    }
   }
   render() {
     const keyValues = [
@@ -59,7 +91,7 @@ class Calculator extends React.Component {
 
     return (
       <div className="key-buttons-container">
-        <DisplayScreen key="displayScreen" name="displayScreen" />
+        <DisplayScreen key="displayScreen" name="displayScreen" info={this.state}/>
         {KeyButtons}
       </div>
     );
