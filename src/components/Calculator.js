@@ -1,12 +1,31 @@
 /* eslint-disable react/prefer-stateless-function */
-
+/* eslint-disable */
 import React from 'react';
 import NumberButton from './NumberButton';
 import DisabledButton from './DisabledButton';
 import DisplayScreen from './DisplayScreen';
+import OperationButton from './OperationButton';
+import operate from './operate';
 import './css/calculator.css';
 
 class Calculator extends React.Component {
+  constructor(props){
+    super(props);
+    // Create a state for two numbers that are to be operated on
+    // Create a state for the operation result by calling the bound operation function 
+    this.liftKey = this.liftKey.bind(this);
+  }
+
+  doOperation(operation){
+    let result = operate(3, 2, operation);
+    console.log(result);
+  }
+  
+  liftKey(key){
+    const operations = ['+', '-', '%', 'x', '÷'];
+    if (operations.includes(key))
+      this.doOperation(key);
+  }
   render() {
     const keyValues = [
       { clear: 'AC' },
@@ -33,37 +52,8 @@ class Calculator extends React.Component {
     const KeyButtons = keyValues.map((keyValue) => {
       let KeyButton = null;
       const [name, sign] = Object.entries(keyValue)[0];
-      switch (keyValue) {
-        case 'AC':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '+/-':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '%':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '÷':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case 'x':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '-':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '+':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '.':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        case '=':
-          KeyButton = <DisabledButton key={name} keyValue={[name, sign]} />;
-          break;
-        default:
-          KeyButton = <NumberButton key={name} keyValue={[name, sign]} />;
-      }
+      
+      KeyButton = <OperationButton key={name} keyValue={[name, sign]} liftKey={this.liftKey}/>;
       return KeyButton;
     });
 
