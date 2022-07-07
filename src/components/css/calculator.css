@@ -20,10 +20,6 @@
   font-size: 30px;
 }
 
-.displayScreen {
-
-}
-
 .zero {
   grid-column: 1 / 3;
   grid-row: 6 / 7;

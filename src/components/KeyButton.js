@@ -1,16 +1,18 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class OperationButton extends React.Component {
-  constructor(props){
+class KeyButton extends React.Component {
+  constructor(props) {
     super(props);
     this.onClickHandler = this.onClickHandler.bind(this);
   }
-  onClickHandler(){
-    const { keyValue } = this.props;
-    this.props.liftKey(keyValue[1]);
+
+  onClickHandler() {
+    const { keyValue, liftKey } = this.props;
+    const key = keyValue[1];
+    liftKey(key);
   }
 
   render() {
@@ -24,15 +26,16 @@ class OperationButton extends React.Component {
     );
   }
 }
-/*
-OperationButton.defaultProps = {
+
+KeyButton.defaultProps = {
   keyValue: ['sign', '+'],
 };
 
-OperationButton.propTypes = {
+KeyButton.propTypes = {
   keyValue: PropTypes.arrayOf(PropTypes.oneOfType(
-    [PropTypes.string.isRequired, PropTypes.string.isRequired],
+    [PropTypes.number.isRequired, PropTypes.string.isRequired],
   )),
+  liftKey: PropTypes.func.isRequired,
 };
-*/
-export default OperationButton;
+
+export default KeyButton;

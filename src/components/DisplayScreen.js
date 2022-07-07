@@ -1,5 +1,4 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,7 +11,6 @@ class DisplayScreen extends React.Component {
         <span>{info.operand1}</span>
         <span>{info.operation}</span>
         <span>{info.operand2}</span>
-
       </p>
     );
   }
@@ -20,10 +18,14 @@ class DisplayScreen extends React.Component {
 
 DisplayScreen.defaultProps = {
   displayScreen: 'displayScreen',
+  info: {},
 };
 
 DisplayScreen.propTypes = {
   displayScreen: PropTypes.string,
+  info: PropTypes.objectOf(PropTypes.oneOfType(
+    [PropTypes.number.isRequired, PropTypes.string.isRequired],
+  )),
 };
 
 export default DisplayScreen;
