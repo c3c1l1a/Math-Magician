@@ -1,5 +1,4 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable */
 
 import React, { useState } from 'react';
 import DisplayScreen from './DisplayScreen';
@@ -7,7 +6,7 @@ import KeyButton from './KeyButton';
 import updateState from './updateState';
 import './css/calculator.css';
 
-function Calculator () {
+function Calculator() {
   const [state, setState] = useState({
     operand1: 0,
     operand2: null,
@@ -15,11 +14,9 @@ function Calculator () {
     result: null,
   });
 
- 
-
   const liftKey = (key) => {
     updateState(key, state, setState);
-  }
+  };
 
   const keyValues = [
     { clear: 'AC' },
@@ -50,7 +47,7 @@ function Calculator () {
 
   return (
     <div className="key-buttons-container">
-      <DisplayScreen key="displayScreen" name="displayScreen" info={state}/>
+      <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
       {KeyButtons}
     </div>
   );

@@ -1,11 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-function DisplayScreen (props) {
+function DisplayScreen(props) {
   const { name, info } = props;
 
   return (
@@ -16,5 +14,17 @@ function DisplayScreen (props) {
     </p>
   );
 }
+
+DisplayScreen.defaultProps = {
+  name: 'displayScreen',
+  info: {},
+};
+
+DisplayScreen.propTypes = {
+  name: PropTypes.string,
+  info: PropTypes.objectOf(PropTypes.oneOfType(
+    [PropTypes.number.isRequired, PropTypes.string.isRequired],
+  )),
+};
 
 export default DisplayScreen;
