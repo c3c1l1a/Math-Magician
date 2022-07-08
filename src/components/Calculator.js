@@ -1,13 +1,26 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable */
 
-import React from 'react';
+import React, { useState } from 'react';
 import DisplayScreen from './DisplayScreen';
 import KeyButton from './KeyButton';
-import operate from './operate';
+import updateState from './updateState';
 import './css/calculator.css';
 
 function Calculator () {
+  const [state, setState] = useState({
+    operand1: 0,
+    operand2: null,
+    operation: null,
+    result: null,
+  });
+
+ 
+
+  const liftKey = (key) => {
+    updateState(key, state, setState);
+  }
+
   const keyValues = [
     { clear: 'AC' },
     { changeSign: '+/-' },
@@ -32,17 +45,15 @@ function Calculator () {
 
   const KeyButtons = keyValues.map((keyValue) => {
     const [name, sign] = Object.entries(keyValue)[0];
-    return <KeyButton key={name} keyValue={[name, sign]} />;
+    return <KeyButton key={name} keyValue={[name, sign]} liftKey={liftKey} />;
   });
 
   return (
     <div className="key-buttons-container">
-      <DisplayScreen key="displayScreen" name="displayScreen" />
+      <DisplayScreen key="displayScreen" name="displayScreen" info={state}/>
       {KeyButtons}
     </div>
   );
 }
-
-
 
 export default Calculator;

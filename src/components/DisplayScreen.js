@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 
 
 function DisplayScreen (props) {
-  const { name } = props;
+  const { name, info } = props;
 
   return (
     <p className={name}>
-       <span>0</span>
+      <span>{info.operand1}</span>
+      <span>{info.operation}</span>
+      <span>{info.operand2}</span>
     </p>
   );
 }
