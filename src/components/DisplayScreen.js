@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DisplayScreen(props) {
+const DisplayScreen = (props) => {
   const { name, info } = props;
 
   return (
@@ -13,7 +13,7 @@ function DisplayScreen(props) {
       <span>{info.operand2}</span>
     </p>
   );
-}
+};
 
 DisplayScreen.defaultProps = {
   name: 'displayScreen',

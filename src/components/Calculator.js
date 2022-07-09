@@ -6,7 +6,7 @@ import KeyButton from './KeyButton';
 import updateState from './updateState';
 import './css/calculator.css';
 
-function Calculator() {
+const Calculator = () => {
   const [state, setState] = useState({
     operand1: 0,
     operand2: null,
@@ -51,6 +51,6 @@ function Calculator() {
       {KeyButtons}
     </div>
   );
-}
+};
 
 export default Calculator;

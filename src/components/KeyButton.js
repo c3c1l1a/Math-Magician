@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function KeyButton(props) {
+const KeyButton = (props) => {
   const { keyValue, liftKey } = props;
   const [name, sign] = keyValue;
 
@@ -17,7 +17,7 @@ function KeyButton(props) {
       {sign}
     </button>
   );
-}
+};
 
 KeyButton.defaultProps = {
   keyValue: ['sign', '+'],
