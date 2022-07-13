@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import DisplayScreen from './DisplayScreen';
-import KeyButton from './KeyButton';
-import updateState from './updateState';
-import Navbar from './Navbar';
-import Home from './pages/Home';
-import CalcPage from './pages/CalcPage';
-import Quote from './pages/Quote';
-import './css/calculator.css';
+import updateState from '../updateState';
+import DisplayScreen from '../DisplayScreen';
+import KeyButton from '../KeyButton';
 
 const Calculator = () => {
   const [state, setState] = useState({
@@ -47,19 +41,10 @@ const Calculator = () => {
     const [name, sign] = Object.entries(keyValue)[0];
     return <KeyButton key={name} keyValue={[name, sign]} liftKey={liftKey} />;
   });
-
   return (
-    <div className="main">
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="calculator" element={<CalcPage />} />
-        <Route path="quote" element={<Quote />} />
-      </Routes>
-      <div className="key-buttons-container">
-        <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
-        {KeyButtons}
-      </div>
+    <div className="key-buttons-container">
+      <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
+      {KeyButtons}
     </div>
   );
 };
