@@ -18,6 +18,7 @@
   grid-row: 1 / 2;
   padding: 10px;
   font-size: 30px;
+  word-break: break-all;
 }
 
 .zero {

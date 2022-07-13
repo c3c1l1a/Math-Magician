@@ -3,29 +3,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class KeyButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onClickHandler = this.onClickHandler.bind(this);
-  }
+const KeyButton = (props) => {
+  const { keyValue, liftKey } = props;
+  const [name, sign] = keyValue;
 
-  onClickHandler() {
-    const { keyValue, liftKey } = this.props;
+  const onClickHandler = () => {
     const key = keyValue[1];
     liftKey(key);
-  }
+  };
 
-  render() {
-    const { keyValue } = this.props;
-    const [name, sign] = [...keyValue];
-
-    return (
-      <button className={name} type="submit" onClick={this.onClickHandler}>
-        {sign}
-      </button>
-    );
-  }
-}
+  return (
+    <button className={name} type="submit" onClick={onClickHandler}>
+      {sign}
+    </button>
+  );
+};
 
 KeyButton.defaultProps = {
   keyValue: ['sign', '+'],

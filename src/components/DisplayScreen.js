@@ -1,28 +1,27 @@
 /* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class DisplayScreen extends React.Component {
-  render() {
-    const { displayScreen, info } = this.props;
+const DisplayScreen = (props) => {
+  const { name, info } = props;
 
-    return (
-      <p className={displayScreen}>
-        <span>{info.operand1}</span>
-        <span>{info.operation}</span>
-        <span>{info.operand2}</span>
-      </p>
-    );
-  }
-}
+  return (
+    <p className={name}>
+      <span>{info.operand1}</span>
+      <span>{info.operation}</span>
+      <span>{info.operand2}</span>
+    </p>
+  );
+};
 
 DisplayScreen.defaultProps = {
-  displayScreen: 'displayScreen',
+  name: 'displayScreen',
   info: {},
 };
 
 DisplayScreen.propTypes = {
-  displayScreen: PropTypes.string,
+  name: PropTypes.string,
   info: PropTypes.objectOf(PropTypes.oneOfType(
     [PropTypes.number.isRequired, PropTypes.string.isRequired],
   )),
