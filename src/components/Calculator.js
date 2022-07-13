@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import DisplayScreen from './DisplayScreen';
 import KeyButton from './KeyButton';
 import updateState from './updateState';
+import Navbar from './Navbar';
 import './css/calculator.css';
 
 const Calculator = () => {
@@ -46,9 +47,12 @@ const Calculator = () => {
   });
 
   return (
-    <div className="key-buttons-container">
-      <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
-      {KeyButtons}
+    <div className="main">
+      <Navbar />
+      <div className="key-buttons-container">
+        <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
+        {KeyButtons}
+      </div>
     </div>
   );
 };
