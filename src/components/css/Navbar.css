@@ -29,7 +29,7 @@
 
 .showMenu {
   display: flex;
-  gap: 10px;
+  gap: 30px;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -39,11 +39,18 @@
   width: 100vw;
   height: 90vh;
   z-index: 10;
-  background: orange;
+  background: yellow;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 0 100px 1px gray;
   margin: 0;
   padding: 0;
+  animation-name: open;
+  animation-duration: 100ms;
+}
+
+@keyframes open {
+  from {transform: translateY(-180px);}
+  to {transform: translateY(0);}
 }
 
 .showMenu li {
@@ -55,6 +62,10 @@
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Cantarell';
+  font-size: 30px;
+  border-bottom: solid 1px #000;
+  opacity: 0.7;
+  color: #000;
 }
 
 @media (min-width: 768px) {

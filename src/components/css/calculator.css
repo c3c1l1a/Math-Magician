@@ -1,3 +1,8 @@
+.calculator-page {
+  padding: 10vh 0;
+
+}
+
 .calculator-header {
   display: none;
 }
@@ -20,7 +25,7 @@
   justify-content: flex-end;
   grid-column: 1/ 5;
   grid-row: 1 / 2;
-  padding: 10px;
+  padding: 20px;
   font-size: 30px;
   word-break: break-all;
 }
@@ -35,7 +40,7 @@
 .minus,
 .plus,
 .equals {
-  background-color: #efef00;
+  background-color: yellow;
 }
 
 @media (min-width: 768px) {
