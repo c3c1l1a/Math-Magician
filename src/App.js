@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import Calculator from './components/pages/Calculator';
 import Quote from './components/pages/Quote';
 import './components/css/calculator.css';
+import './components/css/reset.css';
 
 const App = () => (
   <Router>

@@ -1,0 +1,86 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 0;
+  top: 0;
+  align-items: flex-start;
+}
+
+.navBar button {
+  width: 10vw;
+  height: 10vw;
+  border: none;
+  z-index: 100;
+  font-size: 30px;
+  outline: none;
+  border-radius: 50px;
+  background: none;
+}
+ h2 {
+  display: none;
+ }
+
+.hideMenu {
+  display: none;
+}
+
+.showMenu {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 90vh;
+  z-index: 10;
+  background: orange;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 100px 1px gray;
+  margin: 0;
+  padding: 0;
+}
+
+.showMenu li {
+  list-style: none;
+}
+
+.showMenu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Cantarell';
+}
+
+@media (min-width: 768px) {
+  .navBar {
+    justify-content: space-between;
+    padding: 20px 10vw;
+    box-shadow: 0 0 20px -10px;
+  }
+  .navBar button {
+    display: none;
+  }
+
+  .menuNavDesktop {
+    display: flex;
+    gap:  20px;
+    border-radius: 0;
+    align-items: flex-start;
+  }
+
+  .menuNavDesktop a {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Cantarell';
+  }
+
+  h2 {
+    display: block;
+    font-size: 30px !important;
+    font-family: 'Cantarell' !important;
+  }
+}

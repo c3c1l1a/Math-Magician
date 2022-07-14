@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import './css/Navbar.css';
 
 const Navbar = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const links = [{
     id: 1,
     path: '/',
@@ -16,12 +19,22 @@ const Navbar = () => {
   },
 
   ];
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+
+  const closeMenu = () => {
+    setNavbarOpen(false);
+  };
+
   return (
     <nav className="navBar">
-      <ul>
+      <button type="submit" onClick={handleToggle}>{navbarOpen ? 'x' : '☰'}</button>
+      <h2>Math Magician</h2>
+      <ul className={`menuNavDesktop ${navbarOpen ? 'showMenu' : 'hideMenu'}`}>
         {links.map((link) => (
           <li key={link.id}>
-            <NavLink to={link.path}>{link.text}</NavLink>
+            <NavLink onClick={() => closeMenu()} to={link.path}>{link.text}</NavLink>
           </li>
         ))}
       </ul>

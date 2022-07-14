@@ -1,3 +1,4 @@
+
 .key-buttons-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -36,8 +37,8 @@
 
 @media (min-width: 768px) {
   .key-buttons-container {
-    grid-template-columns: repeat(4, 5vw);
-    grid-auto-rows: minmax(5vw, auto);
+    grid-template-columns: repeat(4, 100px);
+    grid-auto-rows: minmax(100px, auto);
     width: fit-content;
     margin: 5% auto;
     border: solid 1px lightgray;
