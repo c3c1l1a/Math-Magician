@@ -5,6 +5,7 @@
   left: 0;
   top: 0;
   align-items: flex-start;
+  background: #1dd4c2;
 }
 
 .navBar button {
@@ -16,6 +17,7 @@
   outline: none;
   border-radius: 50px;
   background: none;
+  padding: 20px;
 }
  h2 {
   display: none;
