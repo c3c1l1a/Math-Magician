@@ -1,11 +1,11 @@
 .calculator-page {
   padding: 10vh 0;
-
 }
 
 .calculator-header {
   display: none;
 }
+
 .key-buttons-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -46,19 +46,20 @@
 @media (min-width: 768px) {
   .calculator-page {
     display: flex;
-    gap:  10vw;
+    gap: 10vw;
     padding: 20px 10vw;
     margin: 5% 0;
     background: url('../images/pi.png') no-repeat;
     background-position: 35% center;
   }
+
   .calculator-header {
     display: block;
     font-size: 5vw;
-    font-family: 'Cantarell';
+    font-family: 'Cantarell', sans-serif;
     font-weight: bold;
     font-stretch: 100%;
-    padding-top:  20px;
+    padding-top: 20px;
     opacity: 0.6;
   }
 

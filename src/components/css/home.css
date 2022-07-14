@@ -1,81 +1,81 @@
 .home {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	background: #1dd4c2;
-	gap: 10px;
-	height: 100vh;
-	padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #1dd4c2;
+  gap: 10px;
+  height: 100vh;
+  padding-top: 50px;
 }
 
 .home div {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
 }
 
 .home header {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .home h1 {
-	font-size: 50px;
-	text-transform: uppercase;
-	color: #fff;
-	font-family: 'League Spartan', sans-serif;
-	font-weight: bold;
-	width: fit-content;
-	border-bottom: solid white 5px;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: bold;
+  width: fit-content;
+  border-bottom: solid white 5px;
 }
 
 .home h3 {
-	font-size: 30px;
-	font-family: 'Cantarell';
-	font-weight: bold;
-	font-stretch: 100%;
-	padding-top:  20px;
-	opacity: 0.6;
+  font-size: 30px;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: bold;
+  font-stretch: 100%;
+  padding-top: 20px;
+  opacity: 0.6;
 }
 
 .home h4 {
-	font-size: 24px;
-	font-family: 'Cantarell';
-	font-weight: 200;
-	font-stretch: 100%;
+  font-size: 24px;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 200;
+  font-stretch: 100%;
 }
 
 .home p {
-	display: flex;
-	flex-direction: column;
-	font-family: 'Cantarell';
-	gap:  10px;
-	opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cantarell', sans-serif;
+  gap: 10px;
+  opacity: 0.6;
 }
 
-@media (min-width: 786px){
-	.home {
-		flex-direction: row;
-		padding: 8vw 3vw 20px 10vw;
-		gap:  10vw;
-	}
+@media (min-width: 786px) {
+  .home {
+    flex-direction: row;
+    padding: 8vw 3vw 20px 10vw;
+    gap: 10vw;
+  }
 
-	.home div {
-		padding: 0;
-	}
-	.home img {
-		width: 40vw;
-		height: 25vw;
-	}
+  .home div {
+    padding: 0;
+  }
 
-	.home h1 {
-		font-size: 5vw;
-	}
-	.home h3 {
-		font-size: 5vw;
-	}
+  .home img {
+    width: 40vw;
+    height: 25vw;
+  }
 
+  .home h1 {
+    font-size: 5vw;
+  }
 
+  .home h3 {
+    font-size: 5vw;
+  }
 }
