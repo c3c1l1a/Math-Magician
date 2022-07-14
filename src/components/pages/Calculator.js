@@ -42,9 +42,12 @@ const Calculator = () => {
     return <KeyButton key={name} keyValue={[name, sign]} liftKey={liftKey} />;
   });
   return (
-    <div className="key-buttons-container">
-      <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
-      {KeyButtons}
+    <div className="calculator-page">
+      <h1 className="calculator-header">{'Let\'s do some maths'}</h1>
+      <div className="key-buttons-container">
+        <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
+        {KeyButtons}
+      </div>
     </div>
   );
 };
