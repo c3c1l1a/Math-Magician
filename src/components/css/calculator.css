@@ -46,21 +46,23 @@
 @media (min-width: 768px) {
   .calculator-page {
     display: flex;
-    gap: 10vw;
+    justify-content: center;
+    gap: 20vw;
     padding: 20px 10vw;
     margin: 5% 0;
     background: url('../images/pi.png') no-repeat;
-    background-position: 35% center;
+    background-position: 45% center;
   }
 
   .calculator-header {
     display: block;
-    font-size: 5vw;
+    font-size: 5em;
     font-family: 'Cantarell', sans-serif;
     font-weight: bold;
     font-stretch: 100%;
     padding-top: 20px;
     opacity: 0.6;
+    width: 500px;
   }
 
   .key-buttons-container {
