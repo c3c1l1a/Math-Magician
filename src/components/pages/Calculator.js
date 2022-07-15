@@ -1,10 +1,7 @@
-/* eslint-disable react/prefer-stateless-function */
-
 import React, { useState } from 'react';
-import DisplayScreen from './DisplayScreen';
-import KeyButton from './KeyButton';
-import updateState from './updateState';
-import './css/calculator.css';
+import updateState from '../updateState';
+import DisplayScreen from '../DisplayScreen';
+import KeyButton from '../KeyButton';
 
 const Calculator = () => {
   const [state, setState] = useState({
@@ -44,11 +41,13 @@ const Calculator = () => {
     const [name, sign] = Object.entries(keyValue)[0];
     return <KeyButton key={name} keyValue={[name, sign]} liftKey={liftKey} />;
   });
-
   return (
-    <div className="key-buttons-container">
-      <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
-      {KeyButtons}
+    <div className="calculator-page">
+      <h1 className="calculator-header">{'Let\'s do some maths'}</h1>
+      <div className="key-buttons-container">
+        <DisplayScreen key="displayScreen" name="displayScreen" info={state} />
+        {KeyButtons}
+      </div>
     </div>
   );
 };
