@@ -6,10 +6,12 @@
 > 	- Make simple calculations.
 > 	- Read a random math-related quote.
 
+![](./show.gif)
+
 ## Built With
 > React
 
-## Live Demo (Coming soon)
+## Live Demo 
 
 
 ## Getting Started
