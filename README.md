@@ -8,10 +8,14 @@
 
 ![](./show.gif)
 
+## Live demo
+> 1. [pi-magic.netlify.app](https://pi-magic.netlify.app)
+> 2. [pi-magic.herokuapp.com](https://pi-magic.herokuapp.com)
+
+
+
 ## Built With
 > React
-
-## Live Demo 
 
 
 ## Getting Started
